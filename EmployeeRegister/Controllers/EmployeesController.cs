@@ -21,6 +21,13 @@ namespace EmployeeRegister.Controllers
             return View(db.Employees.ToList());
         }
 
+        // GET: Sports
+        public ActionResult Sports()
+        {
+            var model = db.Employees.Where(i => i.Department == "Sports Department").ToList();
+            return View(model);
+        }
+
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
